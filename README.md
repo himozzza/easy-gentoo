@@ -1,5 +1,7 @@
-# easy gentoo unpacking and chrooting. \n
+# easy gentoo unpacking and chrooting.
 
-Run with su. (not sudo) \n
-For advanced users. \n
+Run with su. (not sudo)
+
+For advanced users.
+
 Unmounting system is not implemented yet. (Coming Soon)
