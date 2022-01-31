@@ -4,9 +4,10 @@ Run with su. (not sudo)
 
 Installation:
 
-1. Downloading and unpacking stage3 happens automatically.
 
-2. Choise 4 elements:
+1. Downloading and unpacking stage3 happens automatically.
+2. Only amd64. The rest in the future :)
+3.  Choise 4 elements:
 
     stage3-amd64-desktop-openrc
 	
@@ -15,6 +16,7 @@ Installation:
     stage3-amd64-nomultilib-openrc
 	
     stage3-amd64-nomultilib-systemd
+
 
 
 
