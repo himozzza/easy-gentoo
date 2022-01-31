@@ -3,8 +3,25 @@
 import os
 
 bash = os.system
+
+def startup():
+    targetdir = input("Input Directory for chroot: ")
+    print("\n")
+
+    bash("lsblk")
+    print("\n")
+
+    instGentoo = input("Select root drive: /dev/")
+
+    bash("mkdir {} &> /dev/null".format(targetdir))
+    bash("mount /dev/{} {}".format(instGentoo, targetdir))
+    os.chdir(targetdir)
+    if inst == 1:
+        install_gentoo()
+    elif inst == 2:
+        mounting_root()
+
 def install_gentoo():
-    
     DictRelease = {
         1: "stage3-amd64-desktop-openrc",
         2: "stage3-amd64-desktop-systemd",
@@ -29,17 +46,11 @@ def install_gentoo():
         bash("wget https://mirror.yandex.ru/gentoo-distfiles/releases/amd64/autobuilds/current-{}/{}-{}.tar.xz".format(DictRelease.get(release), DictRelease.get(release), newtext))
         bash("rm -r latest-*.txt")
         bash("tar xvpf {}-{}.tar.xz --xattrs-include='*.*' --numeric-owner".format(DictRelease.get(release), newtext))
-        print("\n")
         mounting_root()
 
     elif release == 5:
         print("\n")
         print("Good Bye! \n")
-        quit()
-        
-    else:
-        print("Error. Invalid input \n")
-        input("Press Enter for exit")
         quit()
 
     
@@ -59,26 +70,24 @@ print("Hello to Gentoo easy mounting :) \n")
 print(
     "1. Prepare to install Gentoo. \n"
     "2. Mounting root and chroot. \n"
+    "3. Exit. \n"
     )
 
-inst = int(input("Select: "))
-print("\n")
-targetdir = input("Input Directory for chroot: ")
-print("\n")
-
-bash("lsblk")
-print("\n")
-
-instGentoo = input("Select root drive: /dev/")
-
-bash("mkdir {} &> /dev/null".format(targetdir))
-bash("mount /dev/{} {}".format(instGentoo, targetdir))
-os.chdir(targetdir)
-
-if inst == 1:
-    install_gentoo()
-elif inst == 2:
-    mounting_root()
-else:
-    print("Error. Invalid input. \nExit.")
+try:
+    inst = int(input("Select: "))
+    print("\n")
+    if int(inst) == int(1):
+        startup()
+    if int(inst) == int(2):
+        startup()
+    elif int(inst) == int(3):
+        print("Good Bye! \n")
+        quit()
+    else:
+        print("Error. Invalid input. \nExit.")
+        quit()
+except Exception:
+    print("\n" + "Error. Invalid input. \nExit.")
     quit()
+
+
