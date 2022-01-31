@@ -2,6 +2,26 @@
 
 Run with su. (not sudo)
 
-For advanced users.
+Installation:
+
+1. Downloading and unpacking stage3 happens automatically.
+
+2. Choise 4 elements:
+
+    stage3-amd64-desktop-openrc
+	
+    stage3-amd64-desktop-systemd
+	
+    stage3-amd64-nomultilib-openrc
+	
+    stage3-amd64-nomultilib-systemd
+
+
+
+Mounting:
+
+1. Simple easy mounting in your system. :)
+
+For advansed users.
 
 Unmounting system is not implemented yet. (Coming Soon)
