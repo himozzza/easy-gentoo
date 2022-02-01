@@ -22,7 +22,7 @@ Installation:
 
 Mounting:
 
-1. Simple easy mounting in your system. :)
+1. Simple easy mounting and chrooting in your system. :)
 
 For advansed users.
 
