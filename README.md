@@ -1,13 +1,9 @@
-# easy gentoo unpacking and chrooting.
+# Загрузка образа Gentoo и chroot.
+Запуск только из su.
 
-Run with su. (not sudo)
-
-Installation:
-
-
-1. Downloading and unpacking stage3 happens automatically.
-2. Only amd64. The rest in the future :)
-3.  Choise 4 elements:
+1. Загрузка и chroot в новую систему автоматически.
+2. В данный момент только amd64.
+3. На выбор четыре образа stage3:
 
     stage3-amd64-desktop-openrc
 	
@@ -20,10 +16,9 @@ Installation:
 
 
 
-Mounting:
+# Монтирование и chroot в систему для восстановления и тп.
 
-1. Simple easy mounting and chrooting in your system. :)
+1. Простое монтирование в установленную систему вне зависимости от дистрибутива. :)
 
-For advansed users.
 
-Unmounting system is not implemented yet. (Coming Soon)
+Размонтирования после выхода из chroot нет. (пока нет)
